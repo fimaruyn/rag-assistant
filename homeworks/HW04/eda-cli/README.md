@@ -256,6 +256,7 @@ curl -X POST "http://127.0.0.1:8000/quality-from-csv" \
 POST /summary-from-csv
 Content-Type: multipart/form-data
 file: <CSV-файл>
+```
 
 ## Структура проекта (упрощённо)
 
