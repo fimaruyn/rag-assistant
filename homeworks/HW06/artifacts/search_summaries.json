@@ -1,0 +1,17 @@
+{
+  "DecisionTree": {
+    "best_params": {
+      "max_depth": 10,
+      "min_samples_leaf": 5
+    },
+    "cv_score": 0.38613550598825686
+  },
+  "RandomForest": {
+    "best_params": {
+      "max_depth": 10,
+      "max_features": "sqrt",
+      "min_samples_leaf": 5
+    },
+    "cv_score": 0.6808405893461094
+  }
+}
