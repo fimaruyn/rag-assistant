@@ -20,9 +20,9 @@
     "roc_auc": 0.9013727421666307
   },
   "HistGradientBoosting": {
-    "accuracy": 0.956,
-    "f1": 0.636963696369637,
-    "roc_auc": 0.8993769901939659
+    "accuracy": 0.9792,
+    "f1": 0.7373737373737373,
+    "roc_auc": 0.8865106320394294
   },
   "StackingClassifier": {
     "accuracy": 0.9174,
