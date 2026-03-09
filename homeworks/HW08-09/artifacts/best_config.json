@@ -1,0 +1,22 @@
+{
+  "experiment": "E4",
+  "dataset": "EMNIST",
+  "seed": 42,
+  "model_class": "MLPBatchNorm",
+  "hidden_dims": [
+    512,
+    256
+  ],
+  "activation": "ReLU",
+  "regularization": "BatchNorm",
+  "dropout_p": null,
+  "optimizer": "Adam",
+  "lr": 0.001,
+  "batch_size": 128,
+  "max_epochs": 50,
+  "early_stopping": true,
+  "patience": 5,
+  "epochs_trained": 14,
+  "best_val_accuracy": 0.8511081560283688,
+  "test_accuracy": 0.8479787234042553
+}
