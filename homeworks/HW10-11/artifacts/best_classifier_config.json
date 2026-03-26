@@ -1,0 +1,12 @@
+{
+  "dataset": "STL10",
+  "architecture": "ResNet18-head-only",
+  "num_classes": 10,
+  "optimizer": "Adam",
+  "lr": 0.001,
+  "seed": 42,
+  "best_val_accuracy": 0.959,
+  "test_accuracy": 0.9447,
+  "epochs_trained": 14,
+  "batch_size": 64
+}
