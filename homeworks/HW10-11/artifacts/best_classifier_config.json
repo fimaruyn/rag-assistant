@@ -5,8 +5,9 @@
   "optimizer": "Adam",
   "lr": 0.001,
   "seed": 42,
-  "best_val_accuracy": 0.959,
-  "test_accuracy": 0.9447,
-  "epochs_trained": 14,
-  "batch_size": 64
+  "best_val_accuracy": 0.957,
+  "test_accuracy": 0.9435,
+  "epochs_trained": 15,
+  "batch_size": 64,
+  "transforms": "Resize(224), ToTensor(), Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])"
 }
