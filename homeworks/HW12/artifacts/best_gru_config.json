@@ -1,15 +1,11 @@
 {
-  "model": "GRU",
-  "input_size": 1,
-  "hidden_size": 64,
-  "num_layers": 1,
-  "window_size": 48,
-  "batch_size": 64,
-  "lr": 0.001,
-  "optimizer": "Adam",
-  "max_epochs": 60,
-  "patience": 8,
-  "best_epoch": 18,
-  "seed": 42,
-  "scaler": "StandardScaler (fit on train target)"
+    "architecture": "GRU",
+    "window_size": 168,
+    "hidden_size": 64,
+    "batch_size": 64,
+    "learning_rate": 0.0005,
+    "seed": 42,
+    "scaler": "StandartScaler",
+    "optimizer": "Adam",
+    "epochs_trained": 30
 }

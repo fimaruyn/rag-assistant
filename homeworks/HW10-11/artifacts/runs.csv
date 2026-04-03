@@ -1,7 +1,7 @@
-experiment_id, task          , dataset      , seed, model_summary               , optimizer, lr    , epochs_trained, best_val_accuracy, test_accuracy, precision, recall, mean_iou, notes
-C1           , classification, STL10        ,   42, SimpleCNN                   , Adam     , 0.001 ,             20,             0.69 ,              ,          ,       ,         , 
-C2           , classification, STL10        ,   42, SimpleCNN+aug               , Adam     , 0.001 ,             25,             0.716,              ,          ,       ,         , 
-C3           , classification, STL10        ,   42, ResNet18-head-only          , Adam     , 0.001 ,             15,             0.957,        0.9435,          ,       ,         , best
-C4           , classification, STL10        ,   42, ResNet18-finetune(layer4+fc), Adam     , 0.0005,             15,             0.948,              ,          ,       ,         , 
-V1           , segmentation  , OxfordIIITPet,   42, DeepLabV3_ResNet50          ,          ,       ,               ,                  ,              ,    0.7361, 0.9787,   0.7212, baseline
-V2           , segmentation  , OxfordIIITPet,   42, DeepLabV3_ResNet50          ,          ,       ,               ,                  ,              ,    0.7183, 0.9784,   0.7037, morph_cleanup
+experiment_id, task          , dataset   , seed, model_summary                           , optimizer, lr   , epochs_trained, best_val_accuracy, test_accuracy, precision, recall, mean_iou, notes
+C1           , classification, STL10     ,   42, "3 conv blocks, 2 classification layers", Adam     , 0.001,             12,             0.548,              ,          ,       ,         , Simple CNN
+C2           , classification, STL10     ,   42, "3 conv blocks, 2 classification layers", Adam     , 0.001,             12,             0.6  ,              ,          ,       ,         , Simple CNN + augmentation
+C3           , classification, STL10     ,   42, ResNet18                                , Adam     , 0.001,              6,             0.943,              ,          ,       ,         , ResNet head only
+C4           , classification, STL10     ,   42, ResNet18 + fine-tune layer4+fc          , Adam     , 0.001,              6,             0.964,         0.949,          ,       ,         , ResNet18 | fine-tune layer4+fc
+V1           , detection     , Pascal VOC,   42, FasterRCNN_ResNet50_FPN_V2 inference    ,          ,      ,               ,                  ,              ,     0.442,  0.927,    0.862, "threshold = 0.3, inference"
+V2           , detection     , Pascal VOC,   42, FasterRCNN_ResNet50_FPN_V2 inference    ,          ,      ,               ,                  ,              ,     0.675,  0.861,    0.865, "threshold = 0.7, inference"
