@@ -1,0 +1,20 @@
+{
+  "model_name": "LightGBM",
+  "version": "1.0.0",
+  "created_at": "2026-05-28T19:43:15.054950",
+  "metrics": {
+    "test_auc": 0.809,
+    "train_size": 119999,
+    "test_size": 30000
+  },
+  "target_column": "SeriousDlqin2yrs",
+  "preprocessing_steps": [
+    "log1p_transformation",
+    "median_imputation",
+    "robust_scaling",
+    "past_due_aggregation"
+  ],
+  "python_version": "3.12",
+  "sklearn_version": "1.5.2",
+  "lightgbm_version": "4.5.0"
+}

@@ -1,0 +1,40 @@
+# Version control
+.git/
+.gitignore
+.gitattributes
+
+# Python
+.venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# IDE & OS
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Development & tests
+notebooks/
+tests/
+pytest.ini
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Data & artifacts (not needed in production image)
+data/raw/
+artifacts/eda/
+*.csv
+*.xls
+
+# Environment & secrets
+.env
+.env.*
+!configs/.env.example

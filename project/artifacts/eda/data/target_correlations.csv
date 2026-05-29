@@ -1,0 +1,11 @@
+,pearson_correlation_with_target
+NumberOfTime30-59DaysPastDueNotWorse,0.12315942585298004
+NumberOfTimes90DaysLate,0.11114921861616718
+NumberOfTime60-89DaysPastDueNotWorse,0.09383582153738326
+NumberOfDependents,0.046706643456350665
+RevolvingUtilizationOfUnsecuredLines,-0.0023855512750008377
+NumberRealEstateLoansOrLines,-0.0030032282522384655
+DebtRatio,-0.003291450316696023
+MonthlyIncome,-0.01974565894539705
+NumberOfOpenCreditLinesAndLoans,-0.027445845051492442
+age,-0.10269834458170712
