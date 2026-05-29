@@ -1,57 +1,56 @@
-# ---------------------------------------------------------
-# Общие правила игнорирования для репозитория студента
-# ---------------------------------------------------------
-
-# Системные файлы ОС
-.DS_Store
-Thumbs.db
-
-# Конфигурации IDE/редакторов
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# Виртуальные окружения Python
+# PYTHON & VIRTUAL ENVIRONMENTS
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+*.egg
 .venv/
 venv/
 env/
 ENV/
 .conda/
-.venv*/
 
-# Кеши Python и скомпилированные файлы
-__pycache__/
-*.py[cod]
-*$py.class
+# IDE & EDITORS
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
 
-# Папки и файлы сборки/дистрибуции (если вдруг появятся)
-build/
-dist/
-eggs/
-*.egg-info/
-.installed.cfg
+# JUPYTER & NOTEBOOKS
+.ipynb_checkpoints/
 
-# Кеши и артефакты тестов
-.pytest_cache/
-.coverage
-.coverage.*
-htmlcov/
+# DATA & ARTIFACTS (DO NOT COMMIT)
+project/data/raw/
+project/data/processed/
+project/models/
+project/artifacts/*.pkl
+project/artifacts/*.joblib
+!project/data/.gitkeep
+!project/data/demo/
 
-# Журналы
-*.log
-logs/
-
-# Кеши Jupyter Notebook
-.ipynb_checkpoints
-
-# Файлы окружения и конфигурации с потенциальными секретами
+# SECRETS & CONFIGURATION
 .env
 *.env
-.env.*
 !.env.example
+!project/configs/.env.example
+*.key
+*.pem
+*.secret
 
-# Разное
+# OS, LOGS & MISC
+.DS_Store
+Thumbs.db
+*.log
+logs/
+.pytest_cache/
+.coverage
+htmlcov/
+build/
+dist/
 *.tmp
 *.bak
-*.old
+
+# Models
+*.joblib
+*.pkl
