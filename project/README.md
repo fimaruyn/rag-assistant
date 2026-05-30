@@ -131,15 +131,13 @@ Copy-Item configs\.env.example configs\.env
 
 ### 4.1. Локальный запуск сервиса 
 
+**Для разработки** (с горячей перезагрузкой, только папка `src/`):
 ```powershell
-cd project
-.\.venv\Scripts\activate
-uv run uvicorn src.service.main:app --host 0.0.0.0 --port 8000 --reload
+uv run uvicorn src.service.main:app --host 0.0.0.0 --port 8000 --reload --reload-dir src
 ```
 
 - Сервис доступен по адресу: `http://localhost:8000`
 - Swagger UI (интерактивная документация): `http://localhost:8000/docs`
-- ReDoc (альтернативная документация): `http://localhost:8000/redoc`
 - Health-check: `http://localhost:8000/health`
 
 ### 4.2. Запуск в Docker 
@@ -173,8 +171,6 @@ uv run pytest tests/test_api.py -v
 uv run pytest tests/test_data_loading.py -v
 ```
 
-Отчёт о покрытии генерируется в `htmlcov/index.html`.
-
 ---
 
 ## 5. Ключевые эндпоинты и тестирование
@@ -190,10 +186,10 @@ uv run pytest tests/test_data_loading.py -v
 
 ### 5.2. Пример запроса `/predict`
 
-```bash
-curl -X POST http://localhost:8000/predict \
-  -H "Content-Type: application/json" \
-  -H "X-Request-ID: demo-001" \
+```powershell
+curl.exe -X POST http://localhost:8000/predict `
+  -H "Content-Type: application/json" `
+  -H "X-Request-ID: demo-001" `
   -d '{
     "RevolvingUtilizationOfUnsecuredLines": 0.15,
     "age": 35,
@@ -216,7 +212,7 @@ curl -X POST http://localhost:8000/predict \
   "risk_category": "medium",
   "decision": "approve_with_conditions",
   "model_version": "1.0.0",
-  "request_id": "c2156234-9480-4916-b659-c1b39c9df33e"
+  "request_id": "demo-001"
 }
 ```
 
@@ -298,14 +294,6 @@ Test-Path data\raw\cs-training.csv
 - `notebooks/01_eda.ipynb` — разведочный анализ, гипотезы предобработки
 - `notebooks/02_modeling.ipynb` — обучение, сравнение, сохранение артефактов
 
-Для воспроизведения:
-```powershell
-# Выполнить ноутбук с сохранением вывода
-uv run jupyter nbconvert --execute notebooks/02_modeling.ipynb --to notebook --inplace
-```
-
-Результаты сохраняются в `artifacts/modeling/`.
-
 ---
 
 ## 8. Демонстрация на защите
@@ -328,9 +316,20 @@ curl http://localhost:8000/health
 # Найти POST /predict → Try it out → Execute
 
 # 4. Или через curl
-curl -X POST http://localhost:8000/predict `
+curl.exe -X POST http://localhost:8000/predict `
   -H "Content-Type: application/json" `
-  -d '{"RevolvingUtilizationOfUnsecuredLines":0.15,"age":35,"DebtRatio":0.3,"MonthlyIncome":5000}'
+  -d '{
+    "RevolvingUtilizationOfUnsecuredLines": 0.15,
+    "age": 35,
+    "NumberOfTime30-59DaysPastDueNotWorse": 0,
+    "DebtRatio": 0.3,
+    "MonthlyIncome": 5000,
+    "NumberOfOpenCreditLinesAndLoans": 3,
+    "NumberOfTimes90DaysLate": 0,
+    "NumberRealEstateLoansOrLines": 1,
+    "NumberOfTime60-89DaysPastDueNotWorse": 0,
+    "NumberOfDependents": 2
+  }'
 
 # 5. Демонстрация логов
 # В консоли сервиса видны запросы с request_id и временем обработки:
