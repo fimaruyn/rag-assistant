@@ -3,9 +3,9 @@
 ## 1. Паспорт проекта
 
 - **Название проекта**: Сервис кредитного скоринга: предсказание вероятности дефолта заёмщика
-- **Автор**: [Белов Владмир Андреевич]
-- **Группа**: [КМБО-11-24]
-- **Контакт**: [@fimaruyn]
+- **Автор**: Белов Владимир Андреевич
+- **Группа**: КМБО-11-24
+- **Контакт**: `@fimaruyn`
 - **Ссылка на репозиторий**: [https://github.com/fimaruyn/rag-assistant]
 
 **Краткое описание**:  
@@ -252,12 +252,27 @@ docker run -p 8000:8000 --env-file configs/.env credit-scorer
    curl http://localhost:8000/health
    # Ответ: {"status":"healthy","model_loaded":true,"version":"1.0.0"}
    ```
-2. **Тестовый запрос на предсказание**:
+
+2. **Тестовый запрос на предсказание** (с инлайн JSON):
    ```bash
    curl -X POST http://localhost:8000/predict \
      -H "Content-Type: application/json" \
-     -d @docs/example_payload.json
+     -d '{
+       "RevolvingUtilizationOfUnsecuredLines": 0.15,
+       "age": 35,
+       "NumberOfTime30-59DaysPastDueNotWorse": 0,
+       "DebtRatio": 0.3,
+       "MonthlyIncome": 5000,
+       "NumberOfOpenCreditLinesAndLoans": 3,
+       "NumberOfTimes90DaysLate": 0,
+       "NumberRealEstateLoansOrLines": 1,
+       "NumberOfTime60-89DaysPastDueNotWorse": 0,
+       "NumberOfDependents": 2
+     }'
    ```
+   
+   *Альтернативно: сохраните пример запроса в локальный файл `payload.json` и используйте `-d @payload.json`.*
+
 3. **Демонстрация интерпретируемости**:
    - Показать важность признаков через `src/features/preprocessing.py` и вывод в логах.
 

@@ -1,56 +1,128 @@
-# PYTHON & VIRTUAL ENVIRONMENTS
+# Python / Virtual Environments
 __pycache__/
 *.py[cod]
 *$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
 *.egg-info/
+.installed.cfg
 *.egg
+
+# Виртуальные окружения
 .venv/
 venv/
-env/
 ENV/
+env/
 .conda/
 
-# IDE & EDITORS
+# Кэши инструментов разработки
+.mypy_cache/
+.pytest_cache/
+.hypothesis/
+.coverage
+htmlcov/
+*.cover
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# IDE & Редакторы
+# VS Code 
 .vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# PyCharm / IntelliJ
 .idea/
+*.iml
+*.iws
+*.ipr
+
+# Sublime / Другие редакторы
 *.swp
 *.swo
 *~
+.project
+.pydevproject
+.settings/
 
-# JUPYTER & NOTEBOOKS
-.ipynb_checkpoints/
-
-# DATA & ARTIFACTS (DO NOT COMMIT)
-project/data/raw/
-project/data/processed/
-project/models/
-project/artifacts/*.pkl
-project/artifacts/*.joblib
-!project/data/.gitkeep
-!project/data/demo/
-
-# SECRETS & CONFIGURATION
-.env
-*.env
-!.env.example
-!project/configs/.env.example
-*.key
-*.pem
-*.secret
-
-# OS, LOGS & MISC
+# Операционные системы
+# macOS
 .DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
 Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.fuse_hidden*
+.Trash-*
+.nfs*
+
+# Логи и временные файлы
 *.log
 logs/
-.pytest_cache/
-.coverage
-htmlcov/
-build/
-dist/
 *.tmp
 *.bak
+*.temp/
+tmp/
+temp/
 
-# Models
-*.joblib
-*.pkl
+# Сырые данные
+project/data/raw/*.csv
+project/data/raw/*.xls
+project/data/raw/*.xlsx
+project/data/raw/*.parquet
+project/data/raw/*.feather
+
+# Артефакты 
+!project/artifacts/modeling/models/scorer_pipeline_v1.0.joblib
+
+# Секреты и конфигурация 
+# Файлы окружения с секретами
+.env
+.env.local
+.env.*.local
+*.env
+*.env.local
+
+# Приватные ключи, сертификаты, токены
+*.key
+*.pem
+*.crt
+*.secret
+*.token
+*.password
+*.pass
+
+# Учётные данные облачных провайдеров
+aws_credentials
+credentials
+boto.cfg
+*.service-account.json
+
+# Docker
+docker-compose.override.yml
+
+# Сборка документации
+docs/_build/
+_site/

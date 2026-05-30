@@ -53,7 +53,7 @@ async def lifespan(app: FastAPI):
     
     yield
     
-    # Shutdown (опционально: освободить ресурсы)
+    # Shutdown
     global _model, _model_loaded
     _model = None
     _model_loaded = False
