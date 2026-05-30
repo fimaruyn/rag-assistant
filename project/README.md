@@ -107,8 +107,11 @@ project/
 # 1. Перейти в папку проекта
 cd project
 
+# (Опционально) Увеличить таймаут сетевых запросов uv
+# $env:UV_HTTP_TIMEOUT = "300"
+
 # 2. Создать и активировать виртуальное окружение через uv
-uv venv .venv
+uv venv .venv --python 3.12
 .\.venv\Scripts\activate  # Windows PowerShell
 # source .venv/bin/activate  # Linux/macOS
 
